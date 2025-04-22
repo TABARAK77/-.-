@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>حاسبة العمر</title>
+</head>
+<body style="text-align:center; margin-top:50px; font-family:Arial">
+    <h1>حاسبة عمرك</h1>
+    <p>ادخل سنة ميلادك:</p>
+    <input type="number" id="birthYear" placeholder="مثلاً 2000">
+    <button onclick="calculateAge()">احسب</button>
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateAge() {
+            const birthYear = document.getElementById('birthYear').value;
+            const currentYear = new Date().getFullYear();
+            const age = currentYear - birthYear;
+            if(birthYear && age >= 0){
+                document.getElementById('result').innerText = `عمرك هو ${age} سنة`;
+            } else {
+                document.getElementById('result').innerText = 'رجاءً ادخل سنة صحيحة!';
+            }
+        }
+    </script>
+</body>
+</html>
